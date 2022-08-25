@@ -1,0 +1,21 @@
+div
+    h2(style='color:crimson;') Historial
+    br
+    if PRODUCTO_DB.length > 0
+        div(class="table-responsive")
+            table.table.table-dark
+                tr(style='color: yellow;')
+                    th Nombre
+                    th Precio
+                    th Thumbail
+                  
+                each prod in PRODUCTO_DB        
+                    tr
+                        td=prod.nombre
+                        td=prod.precio
+                        td
+                            img(width="30" src=prod.thumbail, alt="")
+    else 
+        h3(class="alert alert-warning")='No se encontraron productos'
+
+
